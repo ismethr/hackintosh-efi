@@ -1,20 +1,29 @@
-# OSX
-# =========================
-
+# macOS metadata
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Thumbnails
 ._*
-
-# Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+.fseventsd
 
-# Directories potentially created on remote AFP share
+# Finder / network share metadata
 .AppleDB
 .AppleDesktop
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# OpenCore runtime output and local backups
+EFI/OC/Logs/
+EFI/OC/opencore-*.txt
+EFI/OC/config-backup*.plist
+EFI/OC/config-private*.plist
+EFI/OC/config.local.plist
+
+# Windows boot data is machine-specific and is intentionally not published
+EFI/Microsoft/
+
+# Editor files
+*.swp
+*.tmp
