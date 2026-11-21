@@ -17,7 +17,7 @@
 | 无线与蓝牙 | Intel AX210，macOS 下不使用，不加载驱动 |
 | 音频 | 板载 Realtek 在 macOS 26 下不可用（系统已移除 AppleHDA），声音走显示器 DP 音频 |
 | SMBIOS | MacPro7,1 |
-| macOS | macOS 26.7.1（25G241） |
+| macOS | macOS 26.7.3（25G342） |
 | OpenCore | 1.0.8 RELEASE |
 
 主板型号取自 OpenCore 暴露的固件 OEM 信息。
@@ -70,7 +70,7 @@ EFI/
 | CPUFriend | 1.3.0 | CPU 电源管理 |
 | CPUFriendDataProvider | 1.0.0 | 本机 CPUFriend 数据 |
 | RestrictEvents | 1.1.6 | 机型与系统兼容补丁 |
-| LucyRTL8125Ethernet | 1.2.3 | RTL8125B 2.5 GbE |
+| LucyRTL8125Ethernet | 1.2.4 | RTL8125B 2.5 GbE |
 | RadeonSensor | 0.3.3 | AMD 显卡传感器 |
 | SMCRadeonGPU | 0.3.3 | AMD 显卡 SMC 传感器桥接 |
 | USBToolBox | 1.2.0 | USB 映射框架 |
@@ -88,6 +88,7 @@ EFI/
 - `CustomSMBIOSGuid = true`
 - `LauncherOption = Full`，让 OpenCore 保持在固件启动项首位
 - SIP：`csr-active-config = 40000000`，只关闭 NVRAM 保护，其余保护保持启用
+- `DisableIoMapper = true`：macOS 忽略 VT-d，BIOS 中的 VT-d 可以继续为 Windows 开启
 - `EnableWriteUnprotector = false`：固件提供 Memory Attributes Table，由 `RebuildAppleMemoryMap` 和 `SyncRuntimePermissions` 接管
 - 内核补丁 `Disable RTC wake scheduling` 与 `DisableRtcChecksum = true`：避免 BIOS 被重置或自动开机，代价是定时唤醒不可用
 - `DeviceProperties` 为 RX 5700 XT 注入了自定义 `PP_PhmSoftPowerPlayTable`

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-21
+
+- LucyRTL8125Ethernet 更新至 1.2.4（上游重写了驱动核心，默认启用 ASPM）。
+- `DisableIoMapper = true`。
+- README 更新 macOS 版本与关键配置。
+
 ## 2026-10-03
 
 - OpenCore 更新至 1.0.8 RELEASE，`BOOTX64.efi` 和 UEFI 驱动同步为同版本。
